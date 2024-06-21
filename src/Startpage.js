@@ -121,7 +121,7 @@ useEffect(() => {
                 Telegram
               </button>
 
-              <FaTelegram className="text-2xl text-[#1BB8D8] md:hidden block" />
+              <FaTelegram className="text-4xl text-[#1BB8D8] md:hidden block" />
             </Link>
           </div>
         </nav>
@@ -142,28 +142,28 @@ useEffect(() => {
                 <p>PROJECT NAME</p>
                 <input
                   type="text"
-                  className="w-[90%] mb-3 p-2 border-2 border-black outline-none "
+                  className="md:w-[90%] w-full mb-3 p-2 border-2 border-black outline-none "
                 />
               </div>
               <div>
                 <p>CONTRACT ADDRESS</p>
                 <input
                   type="text"
-                  className="w-[90%] mb-3 p-2 border-2 border-black outline-none "
+                  className="md:w-[90%] w-full mb-3 p-2 border-2 border-black outline-none "
                 />
               </div>
               <div>
                 <p>TOKEN CHAIN</p>
                 <input
                   type="text"
-                  className="w-[90%] p-2 mb-3 border-2 border-black outline-none "
+                  className="md:w-[90%] w-full p-2 mb-3 border-2 border-black outline-none "
                 />
               </div>
               <div>
                 <p>DEXTOOL LINK</p>
                 <input
                   type="text"
-                  className="w-[90%] p-2 border-2 border-black outline-none "
+                  className="md:w-[90%] w-full p-2 border-2 border-black outline-none "
                 />
               </div>
             </section>
@@ -175,7 +175,7 @@ useEffect(() => {
                   onChange={(event) => setTime(event.target.value)}
                   name=""
                   id=""
-                  className="w-[90%] mb-3 h-[45px] px-2 border-2 border-black outline-none "
+                  className="md:w-[90%] w-full mb-3 h-[45px] px-2 border-2 border-black outline-none "
                 >
                   <option value="">--- Select Duration ---</option>
                   <option value="6 Hours Trending">6 Hours Trending</option>
@@ -191,7 +191,7 @@ useEffect(() => {
                   onChange={(event) => setPlace(event.target.value)}
                   name=""
                   id=""
-                  className="w-[90%] mb-3 h-[45px] px-2 border-2 border-black outline-none "
+                  className="md:w-[90%] w-full mb-3 h-[45px] px-2 border-2 border-black outline-none "
                 >
                   <option value="">--- Select Placement ---</option>
                   <option value="Top #1 Spot">Top #1 - #3 Spot</option>
@@ -206,7 +206,7 @@ useEffect(() => {
                     value={price}
                     onChange={(event) => setPrice(event.target.value)}
                     type="text"
-                    className="w-[90%] p-2 mb-3 border-2 border-black outline-none "
+                    className="md:w-[90%] w-full p-2 mb-3 border-2 border-black outline-none "
                   />
                 </div>
               </div>
@@ -307,9 +307,14 @@ useEffect(() => {
               </div>
             </section>
           </div>
+
+          <div className="mt-5 md:mt-10 flex gap-2 justify-center items-center">
+            <p className="text-sm font-bold uppercase">Inquiries:</p>
+            <FaTelegram className="text-2xl text-[#1BB8D8]" />
+          </div>
         </section>
 
-        <div className="md:mt-16 mt-10 border-t py-5 md:py-10 px-2">
+        <div className="md:mt-10 border-t py-5 md:py-10 px-2">
           <p className="text-center text-xs">
             All content available on our website, on hyperlinked websites, and
             on applications, forums, blogs, social media accounts and other
