@@ -74,7 +74,7 @@ const Buy = () => {
                 Telegram
               </button>
 
-              <FaTelegram className="text-2xl text-[#1BB8D8] md:hidden block" />
+              <FaTelegram className="text-4xl text-[#1BB8D8] md:hidden block" />
             </Link>
           </div>
         </nav>
@@ -202,9 +202,14 @@ const Buy = () => {
               </div>
             </section>
           </div>
+
+          <div className="mt-5 md:mt-10 flex gap-2 justify-center items-center">
+            <p className='text-sm font-bold uppercase'>Inquiries:</p>
+            <FaTelegram className="text-2xl text-[#1BB8D8]" />
+          </div>
         </section>
 
-        <div className="md:mt-16 mt-10 border-t py-5 md:py-10 px-2">
+        <div className="md:mt-10 border-t py-5 md:py-10 px-2">
           <p className="text-center text-xs">
             All content available on our website, on hyperlinked websites, and
             on applications, forums, blogs, social media accounts and other
