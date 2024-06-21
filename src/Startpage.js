@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Button from '@mui/material/Button';
+import { FaTelegram } from "react-icons/fa";
 
 const Startpage = () => {
    const [price, setPrice] = useState("")
@@ -108,7 +109,7 @@ useEffect(() => {
             </Link>
           </ul>
 
-          <div>
+          <div className="flex items-center">
             <Link to="/buy-dextbot">
               <button className="py-2 text-sm bg-[#1BB8D8] text-white rounded-full px-5 mr-2">
                 Buy the Bot
@@ -116,9 +117,11 @@ useEffect(() => {
             </Link>
 
             <Link to="https://t.me/Topnotccmassivetrend">
-              <button className="py-2 text-sm bg-[#1BB8D8] text-white rounded-full px-5">
+              <button className="py-2 md:block hidden text-sm bg-[#1BB8D8] text-white rounded-full px-5">
                 Telegram
               </button>
+
+              <FaTelegram className="text-2xl text-[#1BB8D8] md:hidden block" />
             </Link>
           </div>
         </nav>
