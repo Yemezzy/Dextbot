@@ -116,7 +116,7 @@ useEffect(() => {
               </button>
             </Link>
 
-            <Link to="https://t.me/Topnotccmassivetrend">
+            <Link to="https://t.me/Trendmindsmarketing">
               <button className="py-2 md:block hidden text-sm bg-[#1BB8D8] text-white rounded-full px-5">
                 Telegram
               </button>

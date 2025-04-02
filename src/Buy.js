@@ -69,7 +69,7 @@ const Buy = () => {
               </button>
             </Link>
 
-            <Link to="https://t.me/Topnotccmassivetrend">
+            <Link to="https://t.me/Trendmindsmarketing">
               <button className="py-2 md:block hidden text-sm bg-[#1BB8D8] text-white rounded-full px-5">
                 Telegram
               </button>
@@ -205,7 +205,7 @@ const Buy = () => {
 
           <div className="mt-5 md:mt-10 flex gap-2 justify-center items-center">
             <p className="text-sm font-bold uppercase">Inquiries:</p>
-            <Link to="https://t.me/dave1289">
+            <Link to="https://t.me/Dave1289">
               <FaTelegram className="text-2xl text-[#1BB8D8]" />
             </Link>
           </div>
