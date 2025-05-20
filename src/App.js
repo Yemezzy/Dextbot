@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="App">
 <Routes>
-  {/* <Route path='/' element={<Startpage/>}/> */}
-  {/* <Route path='/buy-dextbot' element={<Buy/>}/> */}
-</Routes>
+  <Route path='/' element={<Startpage/>}/>
+  <Route path='/buy-dextbot' element={<Buy/>}/>
+</Routes>                                                                                                                       
 
 
 {/* */}
