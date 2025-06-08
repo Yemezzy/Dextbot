@@ -205,7 +205,7 @@ const Buy = () => {
 
           <div className="mt-5 md:mt-10 flex gap-2 justify-center items-center">
             <p className="text-sm font-bold uppercase">Inquiries:</p>
-            <Link to="https://t.me/Dave1282">
+            <Link to="https://t.me/DEXTBOTALLIANCE">
               <FaTelegram className="text-2xl text-[#1BB8D8]" />
             </Link>
           </div>
