@@ -19,12 +19,10 @@ const Startpage = () => {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const username = "bird2833";
-  const transactionHash = ""; // Replace with real hash
-  const message = encodeURIComponent(`Hello, I made payment for trending and this is my transaction hash: ${transactionHash}`);
-  const telegramUrl = `https://t.me/${username}?start=${message}`
+  const message = encodeURIComponent(`Hello, I made payment for trending and this is my transaction hash:`);
 
   const handleClick = () => {
-    window.open(telegramUrl, "_blank");
+    window.open(`https://t.me/${username}?start=${message}`, "_blank");
   };
 
   const [text, setText] = useState('');
