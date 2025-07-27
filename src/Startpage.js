@@ -13,6 +13,7 @@ const Startpage = () => {
    const [time, setTime] = useState("")
    const [place, setPlace] = useState("")
   const [open, setOpen] = useState(false);
+  const [view, setView] = useState(false);
   const [addy, setAddy] = useState("");
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
@@ -42,6 +43,9 @@ const Startpage = () => {
   const CloseShow = () => {
     setShow(false);
     setOpen(true)
+      setTimeout(() => {
+               setView(true)
+             }, 3000);
   }
   
   const style = {
@@ -331,7 +335,7 @@ useEffect(() => {
               <div>
                 <section>
                 <p>Payment Method</p>
-                  <select name="" id="" onChange={(event) => setAddy(event.target.value)} className='border-2 border-black w-full p-2'>
+                  <select name="" required id="" onChange={(event) => setAddy(event.target.value)} className='border-2 border-black w-full p-2'>
                     <option value="1">--- select payment method ---</option>
                     <option value="0x6274D71CfA2924d6a93A3BeB6bb0Ebf4a58A5027">Eth</option>
                     <option value="4pa4PjTPbb1DMZD2Qm3JQ4bZqaU5MeiVZwnjtZceLYvd">Solana</option>
@@ -354,7 +358,7 @@ useEffect(() => {
           )}
         </div>
              </div>
-                <input ref={inputRef} type="text" placeholder='--- payment address ---' className='border-2 border-black w-full p-2 text-black' readOnly value={addy} />
+                <input required ref={inputRef} type="text" placeholder='--- payment address ---' className='border-2 border-black w-full p-2 text-black' readOnly value={addy} />
              </section>
                 <section className='mt-3'>
                 <p>Price</p>
@@ -365,6 +369,28 @@ useEffect(() => {
                 </button>
                 <p className='text-xs mt-2'>Note: Endavour to copy the correct address to prevent loss of funds.</p>
            </div>
+          </Typography>
+        </Box>
+      </Modal>
+                </div>
+      <div className='px-2'>
+      <Modal
+        open={view}
+       
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <p className='font-bold'>Verify  Payment</p>
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              <div>
+                <p>Kindly Provide proof of payment transaction hash to telegram support for proper payment verification.</p>
+                 <button onClick={handleClick} className="py-3 text-sm bg-[#1BB8D8] text-white rounded-md px-10 w-full mt-3">
+                  Verify Payment via telegram
+                </button>
+          </div>
           </Typography>
         </Box>
       </Modal>
