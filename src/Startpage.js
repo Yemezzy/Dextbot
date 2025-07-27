@@ -88,46 +88,46 @@ const Startpage = () => {
 
 useEffect(() => {
  if ((time === "6 Hours Trending") & (place === "Top #1 Spot")) {
-   setPrice("$600");
+   setPrice("$500");
  }
  if ((time === "6 Hours Trending") & (place === "Top #2 Spot")) {
-   setPrice("$450");
+   setPrice("$350");
  }
  if ((time === "6 Hours Trending") & (place === "Top #3 Spot")) {
-   setPrice("$300");
+   setPrice("$200");
  }
    
    
  if ((time === "12 Hours Trending") & (place === "Top #1 Spot")) {
-   setPrice("$1500");
- }
- if ((time === "12 Hours Trending") & (place === "Top #2 Spot")) {
    setPrice("$1000");
  }
- if ((time === "12 Hours Trending") & (place === "Top #3 Spot")) {
+ if ((time === "12 Hours Trending") & (place === "Top #2 Spot")) {
    setPrice("$800");
+ }
+ if ((time === "12 Hours Trending") & (place === "Top #3 Spot")) {
+   setPrice("$550");
  }
    
    
  if ((time === "24 Hours Trending") & (place === "Top #1 Spot")) {
-   setPrice("$3000");
+   setPrice("$1700");
  }
  if ((time === "24 Hours Trending") & (place === "Top #2 Spot")) {
-   setPrice("$2000");
+   setPrice("$1300");
  }
  if ((time === "24 Hours Trending") & (place === "Top #3 Spot")) {
-   setPrice("$1500");
+   setPrice("$1050");
  }
    
    
  if ((time === "48 Hours Trending") & (place === "Top #1 Spot")) {
-   setPrice("$6000");
+   setPrice("$3200");
  }
  if ((time === "48 Hours Trending") & (place === "Top #2 Spot")) {
-   setPrice("$5000");
+   setPrice("$2700");
  }
  if ((time === "48 Hours Trending") & (place === "Top #3 Spot")) {
-   setPrice("$4000");
+   setPrice("$2000");
  }
     }, );
 
