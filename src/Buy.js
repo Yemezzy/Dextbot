@@ -20,7 +20,7 @@ const Buy = () => {
     const handleOpen = () => {
        setOpen(true);
        setTimeout(() => {
-          window.location.href = "https://t.me/Trendmindsmarketing";
+          window.location.href = "https://t.me/DEXTBOTALLIANCE";
        }, 3000);
 
      
@@ -69,7 +69,7 @@ const Buy = () => {
               </button>
             </Link>
 
-            <Link to="https://t.me/Trendmindsmarketing">
+            <Link to="https://t.me/DEXTBOTALLIANCE">
               <button className="py-2 md:block hidden text-sm bg-[#1BB8D8] text-white rounded-full px-5">
                 Telegram
               </button>

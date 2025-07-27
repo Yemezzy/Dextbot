@@ -174,7 +174,7 @@ useEffect(() => {
               </button>
             </Link>
 
-            <Link to="https://t.me/Trendmindsmarketing">
+            <Link to="https://t.me/DEXTBOTALLIANCE">
               <button className="py-2 md:block hidden text-sm bg-[#1BB8D8] text-white rounded-full px-5">
                 Telegram
               </button>
@@ -346,12 +346,12 @@ useEffect(() => {
                     <p className='text-xs text-red-600'>{error}</p>
               </div>
                   <select name="" required id="" onChange={(event) => setAddy(event.target.value)} className='border-2 border-black w-full p-2'>
-                    <option value="1">--- select payment method ---</option>
-                    <option value="0x6274D71CfA2924d6a93A3BeB6bb0Ebf4a58A5027">Eth</option>
-                    <option value="4pa4PjTPbb1DMZD2Qm3JQ4bZqaU5MeiVZwnjtZceLYvd">Solana</option>
-                    <option value="0x6274D71CfA2924d6a93A3BeB6bb0Ebf4a58A5027">Bnb</option>
-                    <option value="THHx2C1kaKv7mgP1twPoh8HTFPSf6EQu6X">Usdt (trc20)</option>
-                    <option value="0x6274D71CfA2924d6a93A3BeB6bb0Ebf4a58A5027">Base</option>
+                    <option value="">--- select payment method ---</option>
+                    <option value="0x1E55B1698Fb8a882413257F4A6e2535A2c6fEAB3">Eth</option>
+                    <option value="2sApNUiGW4bbCJgCL42AJ5tH1cfBXRbenW6YdTr6hLCH">Solana</option>
+                    <option value="0x1E55B1698Fb8a882413257F4A6e2535A2c6fEAB3">Bnb</option>
+                    <option value="TCtiMaGeEJfbVfYTXGtu8WzrddhzDFzg6x">Usdt (trc20)</option>
+                    <option value="0x1E55B1698Fb8a882413257F4A6e2535A2c6fEAB3">Base</option>
                   </select>
              </section>
                 <section className='mt-3'>
