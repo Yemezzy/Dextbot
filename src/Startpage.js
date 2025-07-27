@@ -1,15 +1,61 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
+import { FaTelegram, FaCopy } from "react-icons/fa";
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { FaTelegram } from "react-icons/fa";
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 const Startpage = () => {
    const [price, setPrice] = useState("")
    const [time, setTime] = useState("")
    const [place, setPlace] = useState("")
-   const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [addy, setAddy] = useState("");
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+  const username = "bird2833";
+  const transactionHash = ""; // Replace with real hash
+  const message = encodeURIComponent(`Hello, I made payment for trending and this is my transaction hash: ${transactionHash}`);
+  const telegramUrl = `https://t.me/${username}?start=${message}`
+
+  const handleClick = () => {
+    window.open(telegramUrl, "_blank");
+  };
+
+  const [text, setText] = useState('');
+  const [copied, setCopied] = useState(false);
+  const inputRef = useRef(null);
+
+  const handleCopy = () => {
+    if (inputRef.current) {
+      navigator.clipboard.writeText(inputRef.current.value)
+        .then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000); // Reset after 2s
+        });
+    }
+  };
+
+  const CloseShow = () => {
+    setShow(false);
+    setOpen(true)
+  }
+  
+  const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 380,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 
    const handleOpen = () => {
      
@@ -17,8 +63,9 @@ const Startpage = () => {
           setOpen(false);
       } else {
           setOpen(true);
-             setTimeout(() => {
-               window.location.href = "https://t.me/Trendmindsmarketing";
+        setTimeout(() => {
+               setOpen(false)
+               setShow(true)
              }, 2000);
       }
   
@@ -225,11 +272,103 @@ useEffect(() => {
             onClick={handleOpen}
             className="py-3 text-sm bg-[#1BB8D8] text-white rounded-md px-10 mt-3 w-full md:w-fit md:mt-10"
           >
-            SUBMIT
+            Procede to payment
           </button>
         </div>
       </div>
-
+      <div className='px-2'>
+      <Modal
+        open={show}
+       
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <p className='font-bold'>  Payment Details</p>
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              <div>
+                <section>
+                <p>Payment Method</p>
+                  <select name="" id="" onChange={(event) => setAddy(event.target.value)} className='border-2 border-black w-full p-2'>
+                    <option value="1">--- select payment method ---</option>
+                    <option value="1">Eth</option>
+                    <option value="2">Bnb</option>
+                    <option value="3">Solana</option>
+                    <option value="4">Usdt (trc20)</option>
+                  </select>
+             </section>
+                <section className='mt-3'>
+                <p>Payment Address</p>
+                <input type="text" placeholder='--- payment address ---' className='border-2 border-black w-full p-2 text-black' readOnly value={addy} />
+             </section>
+                <section className='mt-3'>
+                <p>Price</p>
+                <input type="text" className='border-2 border-black w-full p-2' readOnly value={price}/>
+             </section>
+                <button onClick={CloseShow} className="py-3 text-sm bg-[#1BB8D8] text-white rounded-md px-10 w-full mt-3">
+                  I have made payment
+                </button>
+                <p className='text-xs mt-2'>Note: Endavour to copy the correct address to prevent loss of funds.</p>
+           </div>
+          </Typography>
+        </Box>
+      </Modal>
+                </div>
+      <div className='px-2'>
+      <Modal
+        open={show}
+       
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <p className='font-bold'>  Payment Details</p>
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              <div>
+                <section>
+                <p>Payment Method</p>
+                  <select name="" id="" onChange={(event) => setAddy(event.target.value)} className='border-2 border-black w-full p-2'>
+                    <option value="1">--- select payment method ---</option>
+                    <option value="0x6274D71CfA2924d6a93A3BeB6bb0Ebf4a58A5027">Eth</option>
+                    <option value="4pa4PjTPbb1DMZD2Qm3JQ4bZqaU5MeiVZwnjtZceLYvd">Solana</option>
+                    <option value="0x6274D71CfA2924d6a93A3BeB6bb0Ebf4a58A5027">Bnb</option>
+                    <option value="THHx2C1kaKv7mgP1twPoh8HTFPSf6EQu6X">Usdt (trc20)</option>
+                    <option value="0x6274D71CfA2924d6a93A3BeB6bb0Ebf4a58A5027">Base</option>
+                  </select>
+             </section>
+                <section className='mt-3'>
+                  <div className='flex justify-between items-center'>
+                         <p>Payment Address</p>
+                                  <div
+          onClick={handleCopy}
+          className=" cursor-pointer text-gray-600 hover:text-black"
+        >
+          {copied ? (
+            <span className="text-green-600 font-medium text-sm">Copied ✅</span>
+          ) : (
+            <FaCopy size={15} />
+          )}
+        </div>
+             </div>
+                <input ref={inputRef} type="text" placeholder='--- payment address ---' className='border-2 border-black w-full p-2 text-black' readOnly value={addy} />
+             </section>
+                <section className='mt-3'>
+                <p>Price</p>
+                <input type="text" className='border-2 border-black w-full p-2' readOnly value={price}/>
+             </section>
+                <button onClick={CloseShow} className="py-3 text-sm bg-[#1BB8D8] text-white rounded-md px-10 w-full mt-3">
+                  I have made payment
+                </button>
+                <p className='text-xs mt-2'>Note: Endavour to copy the correct address to prevent loss of funds.</p>
+           </div>
+          </Typography>
+        </Box>
+      </Modal>
+                </div>
       <div className="md:mt-14 text-sm md:text-base mt-7 px-5">
         <p className="text-">
           DexTools trending service for the Hot Pairs section which is available
@@ -316,7 +455,7 @@ useEffect(() => {
           </div>
         </section>
 
-        <div className="md:mt-10 border-t py-5 md:py-10 px-2">
+        <div className="md:mt-10 border-t py-5  px-2">
           <p className="text-center text-xs">
             All content available on our website, on hyperlinked websites, and
             on applications, forums, blogs, social media accounts and other
