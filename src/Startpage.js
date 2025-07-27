@@ -15,6 +15,7 @@ const Startpage = () => {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState(false);
   const [addy, setAddy] = useState("");
+  const [error, setError] = useState('')
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const username = "bird2833";
@@ -41,11 +42,19 @@ const Startpage = () => {
   };
 
   const CloseShow = () => {
-    setShow(false);
-    setOpen(true)
-      setTimeout(() => {
-               setView(true)
+    
+       if (addy == "") {
+         setView(false)
+         setError('Select a payment method')
+       } else {
+             setShow(false);
+             setOpen(true)
+             setTimeout(() => {
+        setView(true)
+         setOpen(false)
              }, 3000);
+        }
+
   }
   
   const style = {
@@ -334,7 +343,10 @@ useEffect(() => {
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               <div>
                 <section>
-                <p>Payment Method</p>
+                  <div className='flex items-center justify-between'>
+                    <p>Payment Method</p>
+                    <p className='text-xs text-red-600'>{error}</p>
+              </div>
                   <select name="" required id="" onChange={(event) => setAddy(event.target.value)} className='border-2 border-black w-full p-2'>
                     <option value="1">--- select payment method ---</option>
                     <option value="0x6274D71CfA2924d6a93A3BeB6bb0Ebf4a58A5027">Eth</option>
