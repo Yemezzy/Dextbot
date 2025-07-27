@@ -18,7 +18,7 @@ const Startpage = () => {
   const [error, setError] = useState('')
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
-  const username = "bird2833";
+  const username = "TheChartBoss";
   const message = encodeURIComponent(`Hello, I made payment for trending and this is my transaction hash:`);
 
   const handleClick = () => {
